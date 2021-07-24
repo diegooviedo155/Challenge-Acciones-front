@@ -7,6 +7,7 @@ const Navbar = ({ brand, loginRegister, name, setSingIn, setLogReg}) => {
     }
 
     const register = () => {
+        setSingIn(false)
         setLogReg(false)
     }
     const home = () => {

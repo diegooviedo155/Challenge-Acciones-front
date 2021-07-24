@@ -6,7 +6,7 @@ import Inicio from './Pages/Inicio';
 
 function App() {
   const [dato,setDato] = useState({})
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(null)
   const [idUser, setIdUser] = useState('') 
   const [name, setName] = useState('')   
 
@@ -27,7 +27,7 @@ function App() {
               <Route path='/actions'>
                 <Actions />
               </Route>
-                
+
               <Route path='/'>
                 <Home logo="Mis Acciones" name={name} idUser={idUser}/>
               </Route>

@@ -26,7 +26,6 @@ const Home = ({ logo, name, idUser }) => {
         getFavs()
         getStocks()
         setActlualizar()
-        console.log(fav)
     }, [actualizar])
 
     const handleCargaStock = (e) => {
