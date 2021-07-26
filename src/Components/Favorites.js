@@ -5,7 +5,6 @@ const Favorites = ({ favs, setActlualizar, setAcc, setfav}) => {
     
     
     const handleDelete = (id)=> {
-    
         const requesInit={
             method: 'DELETE'
         }
@@ -14,7 +13,7 @@ const Favorites = ({ favs, setActlualizar, setAcc, setfav}) => {
             .then(res=>console.log(res))
         setActlualizar(true)
     }
-
+    
     const irA = ({fav}) => {
         setAcc(true)
         setfav(fav)

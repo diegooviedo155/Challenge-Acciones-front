@@ -1,6 +1,7 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
-const Navbar = ({ brand, loginRegister, name, setSingIn, setLogReg}) => {
+const Navbar = ({ brand, loginRegister, name, setSingIn, setLogReg, setUser}) => {
     const singIn = () => {
         setSingIn(false)
         setLogReg(true)
@@ -12,6 +13,11 @@ const Navbar = ({ brand, loginRegister, name, setSingIn, setLogReg}) => {
     }
     const home = () => {
         setSingIn(true)
+    }
+    const logout = () => {
+        window.localStorage.removeItem('loggedAppUser')
+        // {<Link to="/inicio"/>}
+        // return Redirect("/inicio")
     }
 
     return (
@@ -27,7 +33,7 @@ const Navbar = ({ brand, loginRegister, name, setSingIn, setLogReg}) => {
                     ) : (
                         <div className="">
                             <span className="navbar-text mx-5">Usuario: {name}</span>
-                            {/* `<button onClick={singUp} className="btn btn-sm btn-outline-secondary" type="button">Salir</button> */}
+                            <a href="/" onClick={logout} className="btn btn-sm btn-outline-danger" type="button">Salir</a>
                         </div>
                     )
                 }

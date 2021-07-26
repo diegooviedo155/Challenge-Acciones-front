@@ -25,7 +25,7 @@ const Inicio = ({ logo ,
 
     return (
         <Fragment>
-            <Navbar brand={logo} loginRegister={loginRegister} setSingIn={setSingIn} setLogReg={setLogReg}/>
+            <Navbar brand={logo} loginRegister={loginRegister} setSingIn={setSingIn} setLogReg={setLogReg} setUser={setUser}/>
             {
                 !singIn ? (
                 

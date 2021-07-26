@@ -1,4 +1,4 @@
-import React, { Fragment, useState} from 'react'
+import React, { Fragment, useState } from 'react'
 
 const SingUp = ({ logReg,
     setDatos,
@@ -19,8 +19,11 @@ const SingUp = ({ logReg,
             .then(res => res.json())
             .then(res => setDatos(res))
             .catch((err) => alert(err.message))
-            
     }
+
+    window.localStorage.setItem(
+        'loggedAppUser', JSON.stringify(datos)
+    )
 
     const register = (e) => {
         e.preventDefault();
@@ -44,7 +47,7 @@ const SingUp = ({ logReg,
                             <div className="card p-4 text-center mt-5 col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
                                 <form className="m-4">
                                     <div className="mb-3">
-                                        {(datos.session===false)?(<div className="alert alert-danger d-flex align-items-center" role="alert">{datos.message}</div>):(<div></div>)}
+                                        {(datos.session === false) ? (<div className="alert alert-danger d-flex align-items-center" role="alert">{datos.message}</div>) : (<div></div>)}
                                         <div className="form-label">Direccion de Email</div>
                                         <input type="email" className="form-control " id="exampleInputEmail1" value={email} onChange={(e) => setEmail(e.target.value)} aria-describedby="emailHelp" />
                                     </div>
